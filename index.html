@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aperçu accueil v4 — Festival de l'engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Bangers&display=swap" rel="stylesheet">
+<style>
+  :root { --night:#1d2f4d; --sky:#4a72a0; --dusk:#e07a5f; --cream:#ffe9c7; --white:#ffffff; }
+  * { box-sizing:border-box; }
+  html { background:
+           radial-gradient(ellipse 60% 22% at 18% 92%, rgba(224,122,95,.55), transparent 70%),
+           radial-gradient(ellipse 55% 18% at 84% 96%, rgba(224,122,95,.45), transparent 70%),
+           linear-gradient(180deg, #2c4f7c 0%, #3a5f8c 30%, #5d6d8c 58%, #7d6a7e 78%, var(--night) 100%) no-repeat; }
+  body { margin:0; color:var(--white); font-family:"Patrick Hand", "Helvetica Neue", sans-serif; font-size:20px; line-height:1.45; background:transparent; }
+  /* nuages : bandes floues au-dessus du dégradé */
+  .clouds { position:relative; height:120px; margin-top:-120px; pointer-events:none; overflow:hidden; }
+  .clouds::before, .clouds::after { content:""; position:absolute; left:-10%; right:-10%; height:70px; border-radius:50%;
+    background:radial-gradient(closest-side, rgba(255,233,199,.28), transparent); filter:blur(6px); }
+  .clouds::before { top:20px; }
+  .clouds::after  { top:60px; left:20%; right:-30%; background:radial-gradient(closest-side, rgba(224,122,95,.35), transparent); }
+  /* motifs de nuages supplémentaires, dans l'esprit de l'affiche */
+  .cloud-layer { position:absolute; left:-5%; right:-5%; pointer-events:none; filter:blur(10px); }
+  .cloud-layer.c1 { top:-80px; height:110px; background:radial-gradient(ellipse 30% 60% at 12% 50%, rgba(255,233,199,.22), transparent 70%), radial-gradient(ellipse 26% 55% at 38% 40%, rgba(224,122,95,.30), transparent 70%), radial-gradient(ellipse 30% 60% at 70% 55%, rgba(255,233,199,.18), transparent 70%), radial-gradient(ellipse 24% 50% at 92% 45%, rgba(224,122,95,.28), transparent 70%); }
+  .cloud-layer.c2 { top:-10px; height:120px; background:radial-gradient(ellipse 28% 55% at 22% 50%, rgba(74,114,160,.45), transparent 70%), radial-gradient(ellipse 32% 60% at 60% 45%, rgba(255,233,199,.20), transparent 70%), radial-gradient(ellipse 22% 50% at 86% 60%, rgba(224,122,95,.32), transparent 70%); }
+  .cloud-layer.c3 { top:50px; height:100px; background:radial-gradient(ellipse 34% 60% at 8% 50%, rgba(224,122,95,.35), transparent 70%), radial-gradient(ellipse 28% 55% at 48% 55%, rgba(93,109,140,.45), transparent 70%), radial-gradient(ellipse 30% 60% at 88% 50%, rgba(224,122,95,.30), transparent 70%); }
+  .hero { text-align:center; padding:40px 16px 10px; }
+  .hero img { width:min(560px, 100%); height:auto; display:block; margin:0 auto; border-radius:14px;
+              box-shadow:0 18px 50px rgba(10,20,40,.55); }
+  .hero .lineup { font-family:"Bangers", sans-serif; font-size:clamp(28px,5vw,40px); letter-spacing:.04em; margin:22px 0 0; color:var(--cream); }
+  .hero .lineup span { display:block; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:36px; max-width:1100px; margin:0 auto; padding:44px 22px 20px; }
+  h2 { font-family:"Bangers", sans-serif; font-weight:400; color:var(--dusk); font-size:40px; letter-spacing:.04em; margin:0 0 12px; }
+  .vol h2 { color:var(--cream); }
+  ul { margin:0; padding-left:24px; } li { margin:8px 0; }
+  .vol { max-width:1100px; margin:0 auto; padding:30px 22px 50px; }
+  .vol .intro { margin:0 0 18px; }
+  .vol h3 { font-family:"Bangers", sans-serif; font-weight:400; color:var(--dusk); font-size:26px; letter-spacing:.04em; margin:22px 0 4px; }
+  footer { text-align:center; padding:34px 20px; background:var(--night); border-top:2px solid rgba(255,233,199,.25); font-size:19px; }
+  @media (max-width:720px) { .cols { grid-template-columns:1fr; gap:22px; padding:30px 16px 10px; } h2 { font-size:34px; } }
+</style>
+</head>
+<body>
+  <section class="hero">
+    <img src="affiche.jpg" alt="Affiche du Festival de l’engagement, saison 2 : samedi 21 novembre 2026, 14 h – 00 h, place Victor-Hugo, Saint-Denis">
+    <p class="lineup"><span>Rudmo Squad</span><span>Journée de la Teuf</span><span>Providence</span></p>
+  </section>
+  <div class="clouds"><div class="cloud-layer c1"></div><div class="cloud-layer c2"></div><div class="cloud-layer c3"></div></div>
+
+  <section class="cols">
+    <div>
+      <h2>Programme</h2>
+      <ul>
+        <li><strong>14 h – 20 h</strong> : scène ouverte, l’open mic des luttes du 93</li>
+        <li><strong>20 h – minuit</strong> : spectacle lumière et mapping vidéo, musique électro</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Infos pratiques</h2>
+      <ul>
+        <li><strong>Quand</strong> : samedi 21 novembre 2026, de 14 h à minuit</li>
+        <li><strong>Où</strong> : place Victor-Hugo, parvis de la basilique, Saint-Denis (93)</li>
+        <li><strong>Entrée</strong> : libre</li>
+        <li><strong>Sur place</strong> : nourriture et boissons sans alcool, à prix libre, pas de buvette</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="vol">
+    <h2>Les équipes de bénévoles</h2>
+    <p class="intro">Le festival tient grâce à ses bénévoles. Ils sont organisés en équipes, chacune avec son domaine. Choisissez celle qui vous correspond.</p>
+    <h3>Accueil</h3>
+    <ul><li><strong>Accueil</strong> : accueil du public : entrée, orientation, information.</li><li><strong>Donation</strong> : points de donation de la nourriture et des boissons sans alcool, sans vente.</li></ul>
+    <h3>Sécurité et médiation</h3>
+    <ul><li><strong>Service d’ordre</strong> : gestion des flux, médiation en binômes, cheminement libre pour les secours.</li><li><strong>Leave No Trace</strong> : propreté de la place : ramasser les mégots et les déchets.</li></ul>
+    <h3>Technique et captation</h3>
+    <ul><li><strong>Technique</strong> : son, vidéo, lumières et électricité : camion-scène, deux vidéoprojecteurs, sonorisation, barres LED.</li><li><strong>Captation</strong> : captation vidéo de la journée.</li><li><strong>Réseaux &amp; IT</strong> : réseau, outils numériques, inscriptions et accès.</li></ul>
+    <h3>Terrain et communication</h3>
+    <ul><li><strong>Logistique</strong> : conduite, manutention du matériel et coordination des bénévoles volants.</li><li><strong>Quête &amp; Comm’</strong> : communication virtuelle et physique, quête sur place.</li></ul>
+    <h3>Programme</h3>
+    <ul><li><strong>Prog’ Scénique</strong> : animation de la scène : maître de cérémonie, prises de parole, DJ sets.</li><li><strong>Prog’ Non Scénique</strong> : stands, performances et animations hors scène.</li><li><strong>Catering populaire</strong> : cuisine partagée, à prix libre.</li></ul>
+  </section>
+
+  <footer>Festival de l’engagement · saison 2 · Place Victor-Hugo, Saint-Denis</footer>
+</body>
+</html>
